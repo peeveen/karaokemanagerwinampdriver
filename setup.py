@@ -8,12 +8,13 @@ with open('HISTORY.md') as history_file:
 
 setup_args = dict(
     name='karaokemanagerwinampdriver',
-    version='1.0.0',
+    version='1.0.1',
     description='Winamp driver for KaraokeManager',
     long_description_content_type="text/markdown",
     long_description=README + '\n\n' + HISTORY,
     license='MIT',
     packages=find_packages(),
+    py_modules = ['winamp_driver'],
     author='Steven Frew',
     author_email='steven.fullhouse@gmail.com',
     keywords=['Winamp', 'KaraokeManager'],

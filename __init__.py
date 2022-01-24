@@ -1,3 +1,3 @@
-from . import winamp_driver
+from winamp_driver import Driver
 
-__all__ = ['winamp_driver']
+__all__ = ['Driver']
