@@ -22,13 +22,11 @@ class COPYDATASTRUCT(ctypes.Structure):
     ]
 
 class Driver:
-	def __init__(self, config, errors):
+	def __init__(self, config):
 		exe_path=config.get("exe")
 		if not exe_path is None:
 			if path.exists(exe_path):
 				startfile(exe_path)
-			else:
-				errors.append("The configured Winamp exe path ({exePath}) does not exist.")
 
 	def play_karaoke_file(self, karaoke_file, key_change, errors):
 		winamp_window=FindWindowEx(None,None, "Winamp v1.x", None)
