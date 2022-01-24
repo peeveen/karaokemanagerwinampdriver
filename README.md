@@ -1,4 +1,4 @@
-# Winamp Driver for Karaoke Manager
+# Winamp Driver for KaraokeManager
 
 A KaraokeManager driver for Winamp.
 
