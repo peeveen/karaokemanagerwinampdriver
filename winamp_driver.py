@@ -57,13 +57,13 @@ class Driver:
 			# about thread contexts, so just use the raw HWND.
 			pacemaker_hwnd=pacemaker_window.GetSafeHwnd()
 			key_change_thread = threading.Thread(
-				target=self.apply_key_change, args=(pacemaker_hwnd,key_change,5,))
+				target=apply_key_change, args=(pacemaker_hwnd,key_change,5,))
 			key_change_thread.daemon = True
 			key_change_thread.start()
 
-	# Sends the PM_SET_PITCH message to the PaceMaker window (if available) to set
-	# the correct key change to whatever the user requested for a particular song.
-	def apply_key_change(pacemaker_hwnd,key_change,count):
-		for _ in range(count):
-			sleep(1)
-			SendMessage(pacemaker_hwnd,PM_SET_PITCH,0,key_change*1000)
+# Sends the PM_SET_PITCH message to the PaceMaker window (if available) to set
+# the correct key change to whatever the user requested for a particular song.
+def apply_key_change(pacemaker_hwnd,key_change,count):
+	for _ in range(count):
+		sleep(1)
+		SendMessage(pacemaker_hwnd,PM_SET_PITCH,0,key_change*1000)
